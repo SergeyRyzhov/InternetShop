@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="Scribblers.SGSAPI" CodeBehind="SGSAPI.svc.cs" %>

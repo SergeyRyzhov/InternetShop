@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+    <siteMapNode url="sitemap.aspx" title="Карта сайта"  description="Карта сайта">
+        <siteMapNode url="Default.aspx" title="Интернет магазин"  description="Главная страница" />
+        <siteMapNode url="Shop.aspx" title="Интернет магазин: выбор товаров"  description="Магазин для пользователей" />
+        <siteMapNode url="Control panel.aspx" title="Интернет магазин: панель администратора"  description="Панель управления" />
+    </siteMapNode>
+</siteMap>

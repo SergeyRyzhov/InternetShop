@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Common" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:49748/Common.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:49748/Common.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:49748/Common.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/CommonLibrary.Entities" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ICommon_AddUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddUser" />
+  </wsdl:message>
+  <wsdl:message name="ICommon_AddUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommon_RemoveUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveUser" />
+  </wsdl:message>
+  <wsdl:message name="ICommon_RemoveUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommon_GetUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUser" />
+  </wsdl:message>
+  <wsdl:message name="ICommon_GetUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommon_GetUsers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsers" />
+  </wsdl:message>
+  <wsdl:message name="ICommon_GetUsers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommon_GetAllItems_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllItems" />
+  </wsdl:message>
+  <wsdl:message name="ICommon_GetAllItems_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllItemsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommon_AddItem_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddItem" />
+  </wsdl:message>
+  <wsdl:message name="ICommon_AddItem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommon_Remove_InputMessage">
+    <wsdl:part name="parameters" element="tns:Remove" />
+  </wsdl:message>
+  <wsdl:message name="ICommon_Remove_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommon_GetItem_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetItem" />
+  </wsdl:message>
+  <wsdl:message name="ICommon_GetItem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommon_GetShoppingCard_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetShoppingCard" />
+  </wsdl:message>
+  <wsdl:message name="ICommon_GetShoppingCard_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetShoppingCardResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommon_GetOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrder" />
+  </wsdl:message>
+  <wsdl:message name="ICommon_GetOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommon_MakeOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:MakeOrder" />
+  </wsdl:message>
+  <wsdl:message name="ICommon_MakeOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MakeOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommon_AddToCardItem_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddToCardItem" />
+  </wsdl:message>
+  <wsdl:message name="ICommon_AddToCardItem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddToCardItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommon_RemoveFromCard_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveFromCard" />
+  </wsdl:message>
+  <wsdl:message name="ICommon_RemoveFromCard_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveFromCardResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommon_GetBuyHistory_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBuyHistory" />
+  </wsdl:message>
+  <wsdl:message name="ICommon_GetBuyHistory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBuyHistoryResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ICommon">
+    <wsdl:operation name="AddUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICommon/AddUser" message="tns:ICommon_AddUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICommon/AddUserResponse" message="tns:ICommon_AddUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICommon/RemoveUser" message="tns:ICommon_RemoveUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICommon/RemoveUserResponse" message="tns:ICommon_RemoveUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICommon/GetUser" message="tns:ICommon_GetUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICommon/GetUserResponse" message="tns:ICommon_GetUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsers">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICommon/GetUsers" message="tns:ICommon_GetUsers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICommon/GetUsersResponse" message="tns:ICommon_GetUsers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllItems">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICommon/GetAllItems" message="tns:ICommon_GetAllItems_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICommon/GetAllItemsResponse" message="tns:ICommon_GetAllItems_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddItem">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICommon/AddItem" message="tns:ICommon_AddItem_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICommon/AddItemResponse" message="tns:ICommon_AddItem_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Remove">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICommon/Remove" message="tns:ICommon_Remove_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICommon/RemoveResponse" message="tns:ICommon_Remove_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetItem">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICommon/GetItem" message="tns:ICommon_GetItem_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICommon/GetItemResponse" message="tns:ICommon_GetItem_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetShoppingCard">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICommon/GetShoppingCard" message="tns:ICommon_GetShoppingCard_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICommon/GetShoppingCardResponse" message="tns:ICommon_GetShoppingCard_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICommon/GetOrder" message="tns:ICommon_GetOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICommon/GetOrderResponse" message="tns:ICommon_GetOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MakeOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICommon/MakeOrder" message="tns:ICommon_MakeOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICommon/MakeOrderResponse" message="tns:ICommon_MakeOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddToCardItem">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICommon/AddToCardItem" message="tns:ICommon_AddToCardItem_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICommon/AddToCardItemResponse" message="tns:ICommon_AddToCardItem_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveFromCard">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICommon/RemoveFromCard" message="tns:ICommon_RemoveFromCard_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICommon/RemoveFromCardResponse" message="tns:ICommon_RemoveFromCard_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBuyHistory">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICommon/GetBuyHistory" message="tns:ICommon_GetBuyHistory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICommon/GetBuyHistoryResponse" message="tns:ICommon_GetBuyHistory_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ICommon" type="tns:ICommon">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddUser">
+      <soap:operation soapAction="http://tempuri.org/ICommon/AddUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveUser">
+      <soap:operation soapAction="http://tempuri.org/ICommon/RemoveUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUser">
+      <soap:operation soapAction="http://tempuri.org/ICommon/GetUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsers">
+      <soap:operation soapAction="http://tempuri.org/ICommon/GetUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllItems">
+      <soap:operation soapAction="http://tempuri.org/ICommon/GetAllItems" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddItem">
+      <soap:operation soapAction="http://tempuri.org/ICommon/AddItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Remove">
+      <soap:operation soapAction="http://tempuri.org/ICommon/Remove" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetItem">
+      <soap:operation soapAction="http://tempuri.org/ICommon/GetItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetShoppingCard">
+      <soap:operation soapAction="http://tempuri.org/ICommon/GetShoppingCard" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrder">
+      <soap:operation soapAction="http://tempuri.org/ICommon/GetOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MakeOrder">
+      <soap:operation soapAction="http://tempuri.org/ICommon/MakeOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddToCardItem">
+      <soap:operation soapAction="http://tempuri.org/ICommon/AddToCardItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveFromCard">
+      <soap:operation soapAction="http://tempuri.org/ICommon/RemoveFromCard" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBuyHistory">
+      <soap:operation soapAction="http://tempuri.org/ICommon/GetBuyHistory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Common">
+    <wsdl:port name="BasicHttpBinding_ICommon" binding="tns:BasicHttpBinding_ICommon">
+      <soap:address location="http://localhost:49748/Common.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

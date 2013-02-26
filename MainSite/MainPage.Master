@@ -1,0 +1,274 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MainPage.master.cs" Inherits="MainSite.MainPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Интернет магазин</title>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" media="screen" id="commonstyle">
+    <script type="text/javascript" src="Scripts/jquery-1.8.3.js"></script>
+    <script type="text/javascript" src="../Scripts/bootstrap.min.js"></script>
+    <style>
+        .vnavigate
+        {
+            position: fixed;
+            left: 0px;
+            width: 60px;
+            display: block;
+            opacity: 0.4;
+            filter: alpha(opacity=40);
+            z-index: 1;
+        }
+        
+        .link-up
+        {
+            top: 42px;
+            height: 90%;
+        }
+        .link-down
+        {
+            bottom: 2px;
+            height: 10%;
+        }
+        .up-block
+        {
+            font-size: 11px;
+            color: #0E29C2;
+            position: relative;
+            z-index: 1;
+        }
+        .down-block
+        {
+            font-size: 11px;
+            color: #0E29C2;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .main
+        {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 2;
+            height: 100%;
+        }
+        
+        .imgbackground
+        {
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            min-width: 1000px;
+            z-index: -1;
+            width: 100%;
+        }
+    </style>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $('.vnavigate').mouseenter(function () {
+                $(this).animate({ opacity: 1 }, 'hight');
+            });
+            $('.vnavigate').mouseleave(function () {
+                $(this).animate({ opacity: 0.5 }, 'slow');
+            });
+        });
+    </script>
+</head>
+<body class="modal-body" style="/*background-color: #EBFEF1*/" lang="ru">
+    <div class="imgbackground">
+        <img src="../Image/back_001.jpg" alt="" title="" width="100%">
+    </div>
+    <div id="main" class="main">
+        <a href="#top">
+            <div class="arrow link-up vnavigate">
+                <div class="up-block">
+                    <i class="icon-arrow-up"></i>наверх
+                </div>
+            </div>
+        </a><a href="#bottom">
+            <div class="arrow link-down vnavigate">
+                <div class="down-block">
+                    <i class="icon-arrow-down"></i>вниз
+                </div>
+            </div>
+        </a><a id="top"></a>
+        <form id="form1" runat="server">
+        <div style="margin-left: auto; margin-right: auto; position: relative; width: 80%">
+            <table style="width: 100%">
+                <thead>
+                    <tr>
+                        <td colspan="2">
+                            <div class="page-header well" style="cursor: pointer;" onclick="javascript:window.location.href='../Default.aspx'">
+                                <h1>
+                                    Интернет магазин <small>Покупайте у нас</small></h1>
+                            </div>
+                            <div class="navbar  navbar-fixed-top">
+                                <div class="navbar-inner">
+                                    <div class="container">
+                                        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span
+                                            class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+                                        </a><a class="brand" href="../Default.aspx">Интернет магазин</a>
+                                        <div class="nav-collapse">
+                                            <ul class="nav">
+                                                <li><a href="../Default.aspx">Главная</a></li>
+                                                <li><a href="../Shop.aspx">Магазин</a></li>
+                                                <li><a href="../Administrator/ControlPanel.aspx">Панель управления</a></li>
+                                                <li class="dropdown" id="userMenu"><a href="javascript:GetElementByID('userMenu').class += open"
+                                                    class="dropdown-toggle" data-toggle="dropdown">Пользователь <b class="caret"></b>
+                                                </a>
+                                                    <ul class="dropdown-menu">
+                                                        <li><a href="../Registration.aspx">Регистрация</a></li>
+                                                        <li><a href="../Login.aspx">Войти</a></li>
+                                                        <li class="divider"></li>
+                                                        <li class="nav-header">Меню пользователя</li>
+                                                        <li><a href="Users/UserControlPanel.aspx">Личный кабинет</a></li>
+                                                        <li>
+                                                            <asp:LoginStatus ID="LoginStatus2" runat="server" LogoutText="Выйти" LoginText="Войти" />
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                            <!--form class="navbar-search pull-left" action="">
+                                        <input type="text" class="search-query span2" placeholder="Поиск">
+                                        </form-->
+                                        </div>
+                                        <!-- /.nav-collapse -->
+                                    </div>
+                                </div>
+                                <!-- /navbar-inner -->
+                            </div>
+                        </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <!--td style="vertical-align:top">
+                        <div class="well" style="position:fixed;">
+                            <h4>
+                                Категории товаров</h4>
+                            <div class="btn btn-primary">
+                                Все
+                            </div>
+                        </div>
+                        <asp:PlaceHolder ID="PlaceHolder1" runat="server"></asp:PlaceHolder>
+                    </td-->
+                        <td style="vertical-align: top; width: 80%">
+                            <div class="well">
+                                <asp:ContentPlaceHolder ID="content" runat="server" />
+                            </div>
+                        </td>
+                        <td style="width: 20%; vertical-align: top;">
+                            <div style="position: relative; float: right; min-width: 337px;">
+                                <div class="well">
+                                    <h4>
+                                        Меню пользователя</h4>
+                                    <asp:LoginView runat="server" ID="LoginView1">
+                                        <AnonymousTemplate>
+                                            <div>
+                                                <asp:Login ID="Login1" runat="server" CreateUserUrl="~/Registration.aspx" CreateUserText="Регистрация"
+                                                    PasswordRecoveryUrl="~/ForgotPassword.aspx" PasswordRecoveryText="Забыли пароль?">
+                                                    <LayoutTemplate>
+                                                        <i class=" icon-user"></i>Вход на сайт
+                                                        <table cellpadding="1" cellspacing="0" style="border-collapse: collapse;" class="table-hover">
+                                                            <tr>
+                                                                <td>
+                                                                    <table cellpadding="0">
+                                                                        <tr>
+                                                                            <td align="center" colspan="2">
+                                                                                <div class="text-info">
+                                                                                    Log In</div>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td align="right">
+                                                                                <asp:Label class="text-info" ID="UserNameLabel" runat="server" AssociatedControlID="UserName">User Name:</asp:Label>
+                                                                            </td>
+                                                                            <td>
+                                                                                <asp:TextBox ID="UserName" runat="server"></asp:TextBox>
+                                                                                <asp:RequiredFieldValidator ID="UserNameRequired" runat="server" ControlToValidate="UserName"
+                                                                                    ErrorMessage="User Name is required." ToolTip="User Name is required." ValidationGroup="ctl00$ctl05$Login1">*</asp:RequiredFieldValidator>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td align="right">
+                                                                                <asp:Label class="text-info" ID="PasswordLabel" runat="server" AssociatedControlID="Password">Password:</asp:Label>
+                                                                            </td>
+                                                                            <td>
+                                                                                <asp:TextBox class="s" ID="Password" runat="server" TextMode="Password"></asp:TextBox>
+                                                                                <asp:RequiredFieldValidator ID="PasswordRequired" runat="server" ControlToValidate="Password"
+                                                                                    ErrorMessage="Password is required." ToolTip="Password is required." ValidationGroup="ctl00$ctl05$Login1">*</asp:RequiredFieldValidator>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td colspan="2">
+                                                                                <div class="checkbox">
+                                                                                    <asp:CheckBox class="text-info" ID="RememberMe" runat="server" Text="Remember me next time." />
+                                                                                </div>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td align="center" colspan="2" style="color: Red;">
+                                                                                <asp:Literal ID="FailureText" runat="server" EnableViewState="False">
+                                                                                </asp:Literal>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td align="right" colspan="2">
+                                                                                <asp:Button class="btn btn-success" ID="LoginButton" runat="server" CommandName="Login"
+                                                                                    Text="Log In" ValidationGroup="ctl00$ctl05$Login1" />
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td colspan="2">
+                                                                                <asp:HyperLink ID="CreateUserLink" runat="server" NavigateUrl="~/Registration.aspx">Регистрация</asp:HyperLink>
+                                                                                <br />
+                                                                                <asp:HyperLink ID="PasswordRecoveryLink" runat="server" NavigateUrl="~/ForgotPassword.aspx">Забыли пароль?</asp:HyperLink>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </LayoutTemplate>
+                                                </asp:Login>
+                                            </div>
+                                        </AnonymousTemplate>
+                                        <LoggedInTemplate>
+                                            <p>
+                                                <a class="btn btn-primary" href="../Users/UserControlPanel.aspx"><i class="icon-user icon-white">
+                                                </i>Личный кабинет</a>
+                                            </p>
+                                            <p>
+                                                <asp:LoginStatus class="btn btn-info" ID="LoginStatus1" runat="server" />
+                                            </p>
+                                        </LoggedInTemplate>
+                                        <RoleGroups>
+                                        </RoleGroups>
+                                    </asp:LoginView>
+                                </div>
+                                <asp:ContentPlaceHolder ID="rightmenu" runat="server" />
+                                <!--div class="well">
+                                <p class="text text-error">Не работает</p>
+                                <h4>
+                                    Смена темы оформления сайта</h4>
+                                <select id="selectTheme" onchange="javascript: setNewTheme('selectTheme')">
+                                    <option>Стандартная</option>
+                                    <option>Легкая</option>
+                                </select></div-->
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        </form>
+        <a id="bottom"></a>
+    </div>
+</body>
+</html>
